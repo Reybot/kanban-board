@@ -1,0 +1,41 @@
+.board {
+  flex: 1;
+  padding: 24px 24px;
+  display: grid;
+  grid-gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+@media screen and (max-width: 800px) {
+  .board {
+    grid-template-columns: 1fr;
+  }
+}
+
+.board-column {
+}
+
+.board-title {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.board-title-icon {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.Todo {
+  background-color: #49c4e5;
+}
+
+.Doing {
+  background-color: #8471f2;
+}
+
+.Done {
+  background-color: #67e2ae;
+}
