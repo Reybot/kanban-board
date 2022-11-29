@@ -2,6 +2,7 @@
   background-color: var(--bg-gray);
   border-radius: 8px;
   padding: 20px;
+  margin-top: 5px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -19,9 +20,12 @@
     margin: 0;
     padding: 0 30px;
   }
-
   li {
     font-size: 13px;
     color: var(--text-gray);
   }
+}
+
+.ticket:hover {
+  filter: brightness(1.1);
 }

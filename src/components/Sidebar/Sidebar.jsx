@@ -1,14 +1,15 @@
-import React from "react";
-import Links from "../Links/Links";
+import React, { useContext } from "react";
 import "./Sidebar.scss";
+import Links from "../Links/Links";
+import { BoardContext } from "../../context/BoardContext";
 
-const Sidebar = () => {
+export default function Sidebar() {
+  const { projects } = useContext(BoardContext);
+
   return (
     <div className="sidebar">
-      <p>All boards ( 2 )</p>
+      <p>All board ( {projects.length} )</p>
       <Links />
     </div>
   );
-};
-
-export default Sidebar;
+}
