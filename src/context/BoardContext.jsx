@@ -38,11 +38,17 @@ const BoardContextProvider = ({ children }) => {
     setProjectIndex(projects.length);
   };
 
+  const createTicket = (ticket) => {
+    projects[projectIndex].board[0].tickets.push(ticket);
+    setProjects([...projects]);
+  };
+
   const value = {
     projects,
     currentProject,
     changeBoard,
     addNewProject,
+    createTicket,
   };
 
   return (
