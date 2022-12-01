@@ -7,6 +7,7 @@ export default function Links() {
   const { projects, currentProject, changeBoard, addNewProject } =
     useContext(BoardContext);
   const [value, setValue] = useState("");
+
   const [isOpen, setIsOpen] = useState(false);
 
   function toggleIsOpen() {
@@ -29,13 +30,14 @@ export default function Links() {
         );
       })}
       <li onClick={toggleIsOpen} className="new-project">
-        <BoardIcon />
-        +Create new board
+        <BoardIcon /> +Create new board
       </li>
+
       {isOpen && (
         <div className="new-project-input">
           <input
             type="text"
+            placeholder="Project name"
             value={value}
             onChange={(e) => setValue(e.target.value)}
           />

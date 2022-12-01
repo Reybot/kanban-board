@@ -9,7 +9,7 @@
     width: 100%;
     background-color: transparent;
     padding: 8px 16px;
-    border: 1px solid var(--bg-lines);
+    border: solid 1px var(--bg-lines);
     border-radius: 6px;
     color: var(--text);
     outline: none;
@@ -23,13 +23,14 @@
       color: var(--bg-lines);
     }
   }
+
   button {
     background-color: var(--primary);
     color: var(--text);
     border: none;
-    padding: 10px 0;
+    padding: 10px 0px;
     width: 100%;
-    margin: 10px 0;
+    margin: 10px 0px;
     cursor: pointer;
     border-radius: 6px;
 

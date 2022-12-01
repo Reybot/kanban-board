@@ -1,18 +1,19 @@
 import React, { useState, useContext } from "react";
 import "./CreateTicket.scss";
 import { BoardContext } from "../../context/BoardContext";
+import { v4 as uuidv4 } from "uuid";
 
-const CreateTicket = () => {
+export default function CreateTicket() {
   const { createTicket } = useContext(BoardContext);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [subtask, setSubTask] = useState("");
+  const [subtask, setSubtask] = useState("");
 
   return (
     <div className="pop-up-ticket">
       <h3 className="heading-l">Add New Ticket</h3>
       <div>
-        <label className="body-m" htmlFor="">
+        <label htmlFor="" className="body-m">
           Title
         </label>
         <input
@@ -22,43 +23,42 @@ const CreateTicket = () => {
           onChange={(e) => setTitle(e.target.value)}
         />
 
-        <label className="body-m" htmlFor="">
+        <label htmlFor="" className="body-m">
           Description
         </label>
         <input
-          placeholder="e.g take coffe break"
+          placeholder="e.g take a coffe with friend on monday"
           type="text"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
 
-        <label className="body-m" htmlFor="">
+        <label htmlFor="" className="body-m">
           Sub Task
         </label>
         <input
-          placeholder="e.g take coffe break"
+          placeholder="e.g do backflip"
           type="text"
           value={subtask}
-          onChange={(e) => setSubTask(e.target.value)}
+          onChange={(e) => setSubtask(e.target.value)}
         />
       </div>
+
       <button
         onClick={() => {
           createTicket({
-            id: "hej",
+            id: uuidv4(),
             title: title,
             description: description,
             tasks: [subtask],
           });
           setTitle("");
           setDescription("");
-          setSubTask("");
+          setSubtask("");
         }}
       >
         Create Task
       </button>
     </div>
   );
-};
-
-export default CreateTicket;
+}
